@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorVistas;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+
+/* rutas para controlador */
+
+Route::get('/', [ControladorVistas::class, 'home'])->name('rutainicio');
+
+Route::get('/form', [ControladorVistas::class, 'formulario'])->name('rutainicio');
+
+Route::get('/', [ControladorVistas::class, 'consulta'])->name('rutainicio');
