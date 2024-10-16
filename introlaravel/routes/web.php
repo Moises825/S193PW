@@ -23,6 +23,8 @@ Route::get('/', function () {
 
 Route::get('/', [ControladorVistas::class, 'home'])->name('rutainicio');
 
-Route::get('/form', [ControladorVistas::class, 'formulario'])->name('rutainicio');
+Route::get('/form', [ControladorVistas::class, 'formulario'])->name('rutaformulario');
 
-Route::get('/', [ControladorVistas::class, 'consulta'])->name('rutainicio');
+Route::get('/consulta', [ControladorVistas::class, 'consulta'])->name('rutaconsulta');
+
+Route::post('/enviarcliente', [ControladorVistas::class, 'procesarCliente'])->name('');
