@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* rutas para controlador */
+
+Route::get('/', [ControladorVistas::class, 'home'])->name('rutainicio');
+
+Route::get('/principallibro', [ControladorVistas::class, 'principallibros'])->name('rutaprincipallibros');
+
+Route::get('/Registrolibro', [ControladorVistas::class, 'Registrolibro'])->name('rutaRegistrolibro');
+
+Route::post('/procesarliebro', [ControladorVistas::class, 'procesarlibro'])->name('');
