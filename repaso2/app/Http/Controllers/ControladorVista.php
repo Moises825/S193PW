@@ -19,7 +19,7 @@ class ControladorVista extends Controller
  
      public function procesarLibro(Request $peticion)
      {
-         return 'si llego la info del cliente:) ';
+         return 'si llego la info del libro:) ';
  
          //Mostramos todo lo que trae la petición
          //return $peticion->all();
