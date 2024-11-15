@@ -14,11 +14,6 @@ class ControladorVistas extends Controller
         return view('inicio');
     }
 
-    public function formulario()
-    {
-        return view('formulario');
-    }
-
     public function consulta()
     {
         return view('clientes');
@@ -46,8 +41,7 @@ class ControladorVistas extends Controller
         ])
 
         // Redirección con un mensaje falsh en session
-        $usuario= $peticion->input('txtnombre');
-
+        $usuario=$request->input('txtnombre'):
         session()->flash('exito','Se guardo el usuario: '.$usuario);
         return to_route('rutaform');
     }
