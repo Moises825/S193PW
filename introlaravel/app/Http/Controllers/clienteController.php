@@ -7,6 +7,19 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Http\Request\validadorCliente;
 
+/**
+ * Esta función es para la clase del controlador clienteController 
+ * de la vista del cliente.
+ */
+class clienteController extends Controller
+{
+    return view('clientes');
+}
+
+/**
+ * Esta función es para la clase del controlador clienteController
+ * de la parte de editar del cliente.
+ */
 class clienteController extends Controller
 {
     return view('clientes');
@@ -38,6 +51,8 @@ public function store(Request $request)
         "telefono"=>$request->input('txttelefono'),
         "created_at"=> Carbon::now(),
         "update_at"=> Carbon::now(),
+        "edit_at"=> Carbon::now(), //Se crea una función para poder editar la base de datos.
+        "destroy_at"=> Carbon::now() //Se crea una función para poder eliminar la base de datos. 
     ]);
 
     // Redirección con un mensaje falsh en session
