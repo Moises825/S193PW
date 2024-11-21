@@ -22,7 +22,25 @@ class clienteController extends Controller
  */
 class clienteController extends Controller
 {
-    return view('clientes');
+    return edit('clientes');
+}
+
+/**
+ * Esta función es para la clase del controlador clienteController
+ * de la parte de actualizar del cliente.
+ */
+class clienteController extends Controller
+{
+    return update('clientes');
+}
+
+/**
+ * Esta función es para la clase del controlador clienteController
+ * de la parte de eliminar del cliente.
+ */
+class clienteController extends Controller
+{
+    return destroy('clientes');
 }
 
 /**
