@@ -53,13 +53,40 @@ public function index()
 }
 
 /**
- * La usamos para abrir el formulario CRUD. 
+ * La usamos para abrir el formulario CRUD de la vista del cliente creada. 
  */
 public function create()
 {
     return view('clientes');
 }
 
+/**
+ * Se crea una función para arbir el formulario CRUD de la función de editar del cliente creada. 
+ */
+public function create()
+{
+    return view('clientes');
+}
+
+ /**
+ * Se crea una función para arbir el formulario CRUD de la función de actualizar del cliente creada. 
+ */
+public function create()
+{
+    return view('clientes');
+}
+
+ /**
+ * Se crea una función para arbir el formulario CRUD de la función de eliminar del cliente creada. 
+ */
+public function create()
+{
+    return view('clientes');
+}
+
+/**
+ * Se crea la función de 
+ */
 public function store(Request $request)
 {
     DB::table('clientes')->insert([
