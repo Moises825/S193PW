@@ -53,7 +53,7 @@ public function index()
 }
 
 /**
- * La usamos para abrir el formulario CRUD de la vista del cliente creada. 
+ * La usamos para abrir el formulario CRUD de la vista del cliente creado. 
  */
 public function create()
 {
@@ -61,32 +61,30 @@ public function create()
 }
 
 /**
- * Se crea una función para arbir el formulario CRUD de la función de editar del cliente creada. 
+ * Se crea una función para arbir el formulario CRUD de la vista del formulario de editar del cliente creado. 
  */
 public function create()
 {
-    return view('clientes');
+    return edit('clientes');
 }
 
  /**
- * Se crea una función para arbir el formulario CRUD de la función de actualizar del cliente creada. 
+ * Se crea una función para arbir el formulario CRUD de la vista del formulario de actualizar del cliente creado. 
  */
 public function create()
 {
-    return view('clientes');
+    return update('clientes');
 }
 
  /**
- * Se crea una función para arbir el formulario CRUD de la función de eliminar del cliente creada. 
+ * Se crea una función para arbir el formulario CRUD de la vista del formulario de eliminar del cliente creado. 
  */
 public function create()
 {
-    return view('clientes');
+    return destroy('clientes');
 }
 
-/**
- * Se crea la función de 
- */
+// Se crea la librería para que aparezca la fecha y hora. 
 public function store(Request $request)
 {
     DB::table('clientes')->insert([
