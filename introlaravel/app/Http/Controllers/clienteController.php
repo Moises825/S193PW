@@ -2,86 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cliente;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
-use App\Http\Request\validadorCliente;
+use App\Http\Request\vlidadorCliente; //Se agregan las rutas del modelo ORM con Eloquent. 
 
-/**
- * Esta función es para la clase del controlador clienteController 
- * de la vista del cliente.
- */
-class clienteController extends Controller
-{
-    return view('clientes');
-}
-
-/**
- * Esta función es para la clase del controlador clienteController
- * de la parte de editar del cliente.
- */
-class clienteController extends Controller
-{
-    return edit('clientes');
-}
-
-/**
- * Esta función es para la clase del controlador clienteController
- * de la parte de actualizar del cliente.
- */
-class clienteController extends Controller
-{
-    return update('clientes');
-}
-
-/**
- * Esta función es para la clase del controlador clienteController
- * de la parte de eliminar del cliente.
- */
-class clienteController extends Controller
-{
-    return destroy('clientes');
-}
-
-/**
- * Aqui va toda la consulta del CRUD.
- */
 public function index()
 {
-    $consultaclientes= DB::table('clientes')->get();
-    return view('clientes');
+    $consulta= cliente::all();
+    return view('clientes',compact('consulta')); //Se agrega la consulta del cliente en una consulta. 
 }
 
-/**
- * La usamos para abrir el formulario CRUD de la vista del cliente creado. 
- */
-public function create()
-{
-    return view('clientes');
+//Se crean las funciones de las rutas agregadas.
+public function home(){
+    return view('clientes')
 }
 
-/**
- * Se crea una función para arbir el formulario CRUD de la vista del formulario de editar del cliente creado. 
- */
-public function create()
-{
-    return edit('clientes');
+public function inico(){
+    return view('cliente')
 }
 
- /**
- * Se crea una función para arbir el formulario CRUD de la vista del formulario de actualizar del cliente creado. 
- */
-public function create()
-{
-    return update('clientes');
-}
+//Se crea un select de la base de datos.
+public function store(validadorCliente $request) {
+    $addCliente= new cliente();
+    $addCliente->nombre= $request->input(txtnombre);
+    $addCliente->apellido= $request->input(txtapellido);
+    $addCliente->correo= $request->input(txtcorreo);
+    $addCliente->telefono= $request->input(txtelefono);
+    $addCliente->save();
 
- /**
- * Se crea una función para arbir el formulario CRUD de la vista del formulario de eliminar del cliente creado. 
- */
-public function create()
-{
-    return destroy('clientes');
+    $msj= $request->input('txtnombre');
+    session()->flash('exito','Se guardo el cliente: '.$msj);
+    return redirect('back');
 }
 
 // Se crea la librería para que aparezca la fecha y hora. 
